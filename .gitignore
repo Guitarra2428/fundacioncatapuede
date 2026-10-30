@@ -1,0 +1,11 @@
+# Dependencias y temporales
+node_modules/
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Entornos y editores
+.vscode/
+.idea/
+.gemini/

@@ -1,0 +1,148 @@
+.site-footer {
+    border-top: none;
+    background: var(--deep);
+    color: #c8dbcf;
+    padding: 0 var(--pad-x);
+    font-size: .86rem
+}
+
+.footer-main {
+    max-width: var(--max);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr .75fr;
+    gap: 3rem;
+    padding: 3.5rem 0 2.5rem
+}
+
+.footer-intro p {
+    max-width: 320px;
+    margin: 1.15rem 0 0;
+    color: #b8cbc0
+}
+
+.site-footer .brand {
+    width: max-content
+}
+
+.site-footer .brand span,
+.site-footer .brand strong {
+    color: #fff
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem
+}
+
+.footer-links div,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .55rem
+}
+
+.footer-links strong,
+.footer-contact strong {
+    color: var(--sun);
+    font-size: .72rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    margin-bottom: .2rem
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-bottom a {
+    color: #d9e7dc;
+    text-decoration: none
+}
+
+.footer-links a:hover,
+.footer-contact a:hover,
+.footer-bottom a:hover {
+    color: var(--sun);
+    text-decoration: underline;
+    text-underline-offset: 4px
+}
+
+.footer-contact {
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(221, 246, 194, .25)
+}
+
+.footer-contact p {
+    margin: 0;
+    color: #b8cbc0;
+    line-height: 1.55
+}
+
+.footer-contact a {
+    margin-top: .45rem;
+    font-weight: 700;
+    color: var(--sun)
+}
+
+.footer-bottom {
+    max-width: var(--max);
+    margin: auto;
+    padding: 1.15rem 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid rgba(221, 246, 194, .2);
+    font-size: .74rem;
+    color: #a9bdb0
+}
+
+.footer-bottom p {
+    margin: 0
+}
+
+.footer-bottom div {
+    display: flex;
+    gap: 1.2rem
+}
+
+@media(max-width:860px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .footer-intro {
+        grid-column: span 2
+    }
+
+    .footer-contact {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(221, 246, 194, .25);
+        padding-top: 1.4rem
+    }
+}
+
+@media(max-width:560px) {
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.5rem 0 2rem
+    }
+
+    .footer-intro {
+        grid-column: auto
+    }
+
+    .footer-links {
+        gap: 1rem
+    }
+
+    .footer-bottom {
+        flex-direction: column
+    }
+
+    .footer-bottom div {
+        flex-wrap: wrap
+    }
+}

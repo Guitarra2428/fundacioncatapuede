@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /originales/
+
+Sitemap: https://REEMPLAZAR-CON-TU-DOMINIO/sitemap.xml
