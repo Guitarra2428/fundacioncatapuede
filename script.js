@@ -136,14 +136,13 @@ if (gradGrid && !reduceMotion) {
   gradGrid.classList.add('orbit');
   window.addEventListener('resize', layoutOrbit);
 
-  // Controles: ← puntos → y pausa, más el nombre del becario que está al frente
+  // Controles: ← puntos →, más el nombre del becario que está al frente
   const controls = document.createElement('div');
   controls.className = 'orbit-controls';
   controls.innerHTML = `
     <button class="orbit-btn" type="button" data-dir="-1" aria-label="Becario anterior">←</button>
     <div class="orbit-dots" role="group" aria-label="Elegir becario"></div>
     <button class="orbit-btn" type="button" data-dir="1" aria-label="Becario siguiente">→</button>
-    <button class="orbit-btn orbit-toggle" type="button" aria-pressed="false"><span aria-hidden="true">❚❚</span> <span class="orbit-toggle-text">Pausar giro</span></button>
     <p class="orbit-current" aria-live="polite"></p>`;
   stage.after(controls);
   const hint = document.createElement('p');
@@ -161,7 +160,6 @@ if (gradGrid && !reduceMotion) {
     return dot;
   });
   const current = controls.querySelector('.orbit-current');
-  const toggle = controls.querySelector('.orbit-toggle');
 
   // Ángulo del anillo que deja la tarjeta i al frente, por el camino más corto
   function goTo(i) {
@@ -174,18 +172,11 @@ if (gradGrid && !reduceMotion) {
   controls.querySelectorAll('[data-dir]').forEach(btn => btn.addEventListener('click', () => {
     goTo((front + Number(btn.dataset.dir) + cards.length) % cards.length);
   }));
-  toggle.addEventListener('click', () => {
-    userPaused = !userPaused;
-    toggle.setAttribute('aria-pressed', String(userPaused));
-    toggle.firstElementChild.textContent = userPaused ? '▶' : '❚❚';
-    toggle.querySelector('.orbit-toggle-text').textContent = userPaused ? 'Reanudar giro' : 'Pausar giro';
-    start();
-  });
 
   // Se detiene con el cursor encima, con una tarjeta girada o con la ficha abierta
   gradGrid.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hovering = true; });
   gradGrid.addEventListener('pointerleave', () => { hovering = false; start(); });
-  const held = () => hovering || dragging || userPaused || !!gradGrid.querySelector('.flipped') || gradDialog?.open || gradGrid.matches(':focus-within');
+  const held = () => hovering || dragging || !!gradGrid.querySelector('.flipped') || gradDialog?.open || gradGrid.matches(':focus-within');
 
   // Arrastrar con ratón o dedo
   let startX = 0, startAngle = 0, moved = false;

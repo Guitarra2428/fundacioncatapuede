@@ -343,7 +343,6 @@ footer .brand-logo { border-color: rgba(255, 255, 255, .35); }
 .orbit-controls { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .6rem 1rem; margin-top: .5rem; }
 .orbit-btn { display: inline-grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 50%; border: 1px solid rgba(255, 225, 74, .45); background: rgba(255, 255, 255, .04); color: var(--sun); font-size: 1.15rem; line-height: 1; cursor: pointer; transition: background .2s, color .2s; }
 .orbit-btn:hover { background: var(--sun); color: var(--deep); }
-.orbit-toggle { width: auto; padding: 0 1rem; border-radius: 99px; font: 600 .82rem "DM Sans", sans-serif; gap: .45rem; display: inline-flex; align-items: center; }
 .orbit-dots { display: flex; gap: .45rem; }
 .orbit-dots button { width: .7rem; height: .7rem; padding: 0; border-radius: 50%; border: 1px solid rgba(255, 225, 74, .6); background: transparent; cursor: pointer; transition: background .2s, transform .2s; }
 .orbit-dots button[aria-current="true"] { background: var(--sun); transform: scale(1.25); }
