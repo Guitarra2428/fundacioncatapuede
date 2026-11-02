@@ -188,21 +188,10 @@ h3 { font-size: 1.3rem; margin: .6rem 0; line-height: 1.25; }
 
 /* ---------- Aliados ---------- */
 .sponsor { background: var(--lime-soft); }
-.sponsor-card { display: grid; grid-template-columns: 1.05fr 1fr; background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-.sponsor-visuals { display: grid; grid-template-columns: 1.3fr 1fr; background: var(--deep); position: relative; }
-.sponsor-photo { margin: 0; position: relative; overflow: hidden; }
-.sponsor-photo img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; transition: transform .35s; display: block; }
-.sponsor-photo:hover img { transform: scale(1.03); }
-.sponsor-photo--main img { object-position: center 25%; }
-.sponsor-photo--secondary img { object-position: center 15%; }
-.sponsor-photo figcaption { position: absolute; inset: auto 0 0; padding: 1.2rem .8rem .5rem; font-size: .74rem; font-weight: 600; color: #fff; background: linear-gradient(transparent, rgba(15, 36, 18, .92)); }
-.sponsor-body { padding: clamp(1.75rem, 4vw, 3.2rem); align-self: center; }
-.sponsor-lead { font: 1.2rem/1.25 Fraunces, serif; color: var(--deep); margin: .4rem 0 .7rem; }
-.sponsor-body p:not(.eyebrow):not(.sponsor-lead) { color: #4a5a54; font-size: .95rem; }
-.sponsor-facts { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; padding: .85rem 0; margin: 1rem 0 1.2rem; border-top: 1px solid rgba(15, 36, 18, .12); border-bottom: 1px solid rgba(15, 36, 18, .12); font-size: .84rem; }
-.sponsor-facts div { display: grid; gap: .15rem; }
-.sponsor-facts dt { color: var(--green); font-size: .72rem; text-transform: uppercase; font-weight: 700; letter-spacing: .06em; }
-.sponsor-facts dd { margin: 0; color: #4a5a54; font-weight: 500; }
+.sponsor-card { display: grid; grid-template-columns: 1fr 1.1fr; background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.sponsor-photo img { width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: 50% 30%; }
+.sponsor-body { padding: clamp(1.75rem, 4vw, 3.5rem); align-self: center; }
+.sponsor-body p:not(.eyebrow) { color: #4a5a54; }
 
 /* ---------- Contacto ---------- */
 .contact { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 6vw, 6rem); background: #fff; }
@@ -238,14 +227,8 @@ footer .brand-logo { border-color: rgba(255, 255, 255, .35); }
   .hero-note { left: .8rem; }
   .leader-card { grid-template-columns: 1fr; }
   .sponsor-card { grid-template-columns: 1fr; }
-  .sponsor-visuals { grid-template-columns: 1.3fr 1fr; }
-  .sponsor-photo img { min-height: 260px; }
+  .sponsor-photo img { min-height: 0; aspect-ratio: 16 / 10; }
   footer { flex-direction: column; align-items: flex-start; gap: .5rem; }
-}
-
-@media (max-width: 540px) {
-  .sponsor-visuals { grid-template-columns: 1fr; }
-  .sponsor-photo--secondary { display: none; }
 }
 
 @media (max-width: 600px) {
